@@ -1,0 +1,533 @@
+/* =====================================================
+   JAWЕHER GAALOUL — MES PROJETS
+   Rose Futuristic / Glass / Animated
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --rose: #e85d91;
+    --rose-dark: #9f4169;
+    --pink: #ffd9e7;
+    --mauve: #9b72cf;
+    --text: #594550;
+    --dark: #2d2029;
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 5% 10%,
+            rgba(255, 170, 202, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 95% 30%,
+            rgba(183, 145, 235, 0.25),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 196, 220, 0.3),
+            transparent 30%
+        ),
+        #fff9fc;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND ANIMÉ
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 150, 195, 0.18);
+
+    filter: blur(10px);
+
+    top: 10%;
+    left: -160px;
+
+    animation: moveBubble 9s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(177, 135, 230, 0.15);
+
+    filter: blur(15px);
+
+    right: -180px;
+    bottom: 5%;
+
+    animation: moveBubble2 11s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+
+@keyframes moveBubble {
+
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(90px, 100px);
+    }
+}
+
+
+@keyframes moveBubble2 {
+
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-90px, -100px);
+    }
+}
+
+
+/* =====================================================
+   TITRE PRINCIPAL
+===================================================== */
+
+body > h1 {
+
+    width: fit-content;
+
+    margin: 80px auto 70px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #9f4169,
+            #e6538b,
+            #9564bd
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+
+    animation: titleIn 1s ease;
+}
+
+
+@keyframes titleIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Petite ligne sous le titre */
+
+body > h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 60%;
+
+    height: 4px;
+
+    margin: 15px auto 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rose),
+            var(--mauve)
+        );
+
+    animation: lineAppear 1.5s ease;
+}
+
+
+@keyframes lineAppear {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 60%;
+    }
+}
+
+
+/* =====================================================
+   PROJET
+===================================================== */
+
+body > h2 {
+
+    width: min(950px, 88%);
+
+    margin: 70px auto 0;
+
+    padding: 30px 35px 15px;
+
+    position: relative;
+
+    color: #914365;
+
+    font-size: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.6);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-radius: 30px 30px 0 0;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(175, 91, 130, 0.08);
+
+    transition: 0.4s;
+
+    animation: projectAppear 0.8s ease both;
+}
+
+
+body > h2::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 28px;
+
+    width: 6px;
+    height: 35px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #e8558d,
+            #a66bc5
+        );
+}
+
+
+body > h2:hover {
+
+    transform: translateX(8px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(175, 91, 130, 0.16);
+}
+
+
+@keyframes projectAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+body > p {
+
+    width: min(950px, 88%);
+
+    margin: 0 auto;
+
+    padding: 5px 35px 30px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #604a55;
+
+    background:
+        rgba(255, 255, 255, 0.6);
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   SOUS-TITRES
+===================================================== */
+
+body > h4 {
+
+    width: min(950px, 88%);
+
+    margin: 0 auto;
+
+    padding: 15px 35px 8px;
+
+    color: #b04d78;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    background:
+        rgba(255, 255, 255, 0.6);
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   TECHNOLOGIES
+===================================================== */
+
+body > ul {
+
+    width: min(950px, 88%);
+
+    margin: 0 auto 35px;
+
+    padding: 10px 35px 30px;
+
+    background:
+        rgba(255, 255, 255, 0.6);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-radius: 0 0 30px 30px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(175, 91, 130, 0.10);
+
+    list-style: none;
+}
+
+
+/* Chaque technologie devient un petit badge */
+
+body > ul li {
+
+    display: inline-block;
+
+    margin: 7px 5px;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe0eb,
+            #f1e3fa
+        );
+
+    color: #82445e;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.8);
+
+    transition: 0.3s;
+}
+
+
+body > ul li:hover {
+
+    transform:
+        translateY(-5px)
+        rotate(-2deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7bdd3,
+            #dfc5f4
+        );
+
+    color: #71354f;
+
+    box-shadow:
+        0 8px 20px
+        rgba(210, 90, 145, 0.18);
+}
+
+
+/* =====================================================
+   ESPACE ENTRE LES PROJETS
+===================================================== */
+
+body > h2:nth-of-type(2) {
+
+    margin-top: 100px;
+}
+
+
+/* =====================================================
+   ANIMATION DES ÉLÉMENTS
+===================================================== */
+
+body > h2:nth-of-type(1) {
+    animation-delay: 0.2s;
+}
+
+body > h2:nth-of-type(2) {
+    animation-delay: 0.5s;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    body > h1 {
+
+        font-size: 43px;
+
+        margin-top: 55px;
+    }
+
+    body > h2 {
+
+        width: 90%;
+
+        font-size: 22px;
+
+        padding: 25px 25px 12px;
+    }
+
+    body > p,
+    body > h4 {
+
+        width: 90%;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    body > ul {
+
+        width: 90%;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    body > ul li {
+
+        font-size: 13px;
+    }
+}

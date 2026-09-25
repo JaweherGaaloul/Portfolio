@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+
+/* =========================
+   STYLE GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 50px 8%;
+    font-family: "DM Sans", sans-serif;
+    color: #594550;
+
+    background:
+        radial-gradient(circle at 10% 10%,
+        rgba(255, 170, 202, 0.35),
+        transparent 25%),
+
+        radial-gradient(circle at 90% 25%,
+        rgba(183, 145, 235, 0.25),
+        transparent 25%),
+
+        radial-gradient(circle at 50% 100%,
+        rgba(255, 196, 220, 0.35),
+        transparent 30%),
+
+        #fff9fc;
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   DECORATION ARRIERE-PLAN
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 153, 195, 0.18);
+
+    top: 10%;
+    left: -150px;
+
+    filter: blur(10px);
+
+    animation: floating1 8s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(180, 137, 232, 0.16);
+
+    right: -180px;
+    bottom: 5%;
+
+    filter: blur(10px);
+
+    animation: floating2 10s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+
+@keyframes floating1 {
+
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(80px, 100px);
+    }
+}
+
+
+@keyframes floating2 {
+
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-80px, -80px);
+    }
+}
+
+
+/* =========================
+   TITRE
+========================= */
+
+h1 {
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    margin-bottom: 80px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9f4169,
+            #e6538b,
+            #9564bd
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: titleAppear 1.2s ease forwards;
+}
+
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   BLOCS FORMATIONS
+========================= */
+
+h2 {
+    position: relative;
+
+    max-width: 1000px;
+
+    margin: 70px auto 20px;
+
+    padding: 25px 30px;
+
+    font-size: 27px;
+
+    color: #8f4165;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 40px rgba(175, 91, 130, 0.10);
+
+    transition: 0.4s;
+}
+
+
+h2::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 22px;
+
+    width: 6px;
+    height: 35px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            #e8558d,
+            #a66bc5
+        );
+
+    box-shadow:
+        0 0 15px rgba(220, 80, 140, 0.4);
+}
+
+
+h2:hover {
+    transform: translateX(8px);
+
+    box-shadow:
+        0 20px 50px rgba(175, 91, 130, 0.18);
+}
+
+
+/* =========================
+   PARAGRAPHES
+========================= */
+
+p {
+    max-width: 1000px;
+
+    margin: 15px auto;
+
+    padding: 5px 15px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #604a55;
+
+    animation: textAppear 1s ease;
+}
+
+
+@keyframes textAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   PETITS TITRES
+========================= */
+
+h4 {
+    max-width: 1000px;
+
+    margin: 30px auto 10px;
+
+    color: #a64d76;
+
+    font-size: 18px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   LISTES
+========================= */
+
+ul {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 25px 45px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 40px rgba(175, 91, 130, 0.10);
+
+    transition: 0.4s;
+}
+
+
+ul:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 55px rgba(175, 91, 130, 0.18);
+}
+
+
+li {
+    padding: 8px 0;
+
+    transition: 0.3s;
+}
+
+
+li::marker {
+    color: #db5b8c;
+
+    font-weight: bold;
+}
+
+
+li:hover {
+    color: #ce4f82;
+
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   PETITE ANIMATION DES BLOCS
+========================= */
+
+h2,
+h4,
+ul,
+p {
+    animation: appear 0.8s ease both;
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE TELEPHONE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 30px 6%;
+    }
+
+    h1 {
+        font-size: 45px;
+
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 22px;
+
+        padding: 20px 25px;
+    }
+
+    h4 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    ul {
+        padding: 20px 30px;
+    }
+}
