@@ -1,17 +1,8 @@
-// ===============================
-// MESSAGE DE BIENVENUE
-// ===============================
-
 window.addEventListener("load", function () {
 
     console.log("Bienvenue sur le portfolio de Jaweher !");
 
 });
-
-
-// ===============================
-// ANIMATION DES SECTIONS
-// ===============================
 
 const sections = document.querySelectorAll("main h2");
 
@@ -37,11 +28,6 @@ sections.forEach(function(section) {
     observer.observe(section);
 
 });
-
-
-// ===============================
-// FORMULAIRE DE CONTACT
-// ===============================
 
 const form = document.getElementById("contact");
 
